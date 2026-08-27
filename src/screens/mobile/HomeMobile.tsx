@@ -32,10 +32,10 @@ export default function HomeMobile({ onNavigate }: { onNavigate: (target: NavTar
           style={{
             display: "block",
             width: "100%",
-            aspectRatio: "3 / 1",
+            aspectRatio: "5 / 1",
             borderRadius: 16,
             boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
-            objectFit: "fill",
+            objectFit: "contain",
           }}
         />
       </div>
@@ -56,8 +56,8 @@ export default function HomeMobile({ onNavigate }: { onNavigate: (target: NavTar
           style={{
             display: "block",
             width: "100%",
-            height: 220,
-            objectFit: "cover",
+            height: 350,
+            objectFit: "contain",
             objectPosition: "top center",
           }}
         />

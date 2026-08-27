@@ -45,10 +45,10 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
           left: 410,
           top: 101,
           width: 1100,
-          height: 367,
+          height: 221,
           borderRadius: 30,
           boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
-          objectFit: "fill",
+          objectFit: "contain",
         }}
       />
 
@@ -150,11 +150,11 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         alt="Doctor"
         style={{
           position: "absolute",
-          left: -175,
-          top: 283,
-          width: 840,
-          height: 1125,
-          objectFit: "cover",
+          left: 0,
+          bottom: 0,
+          width: 608,
+          height: 1080,
+          objectFit: "contain",
           pointerEvents: "none",
         }}
       />

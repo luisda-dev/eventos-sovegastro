@@ -81,10 +81,10 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
           left: 510,
           top: 116,
           width: 900,
-          height: 300,
+          height: 180,
           borderRadius: 30,
           boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
-          objectFit: "fill",
+          objectFit: "contain",
         }}
       />
 

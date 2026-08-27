@@ -14,10 +14,10 @@ export default function ExposicionMobile({ onNavigate }: { onNavigate: (target: 
           style={{
             display: "block",
             width: "100%",
-            aspectRatio: "3 / 1",
+            aspectRatio: "5 / 1",
             borderRadius: 16,
             boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
-            objectFit: "fill",
+            objectFit: "contain",
           }}
         />
       </div>
