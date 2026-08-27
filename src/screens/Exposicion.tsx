@@ -38,7 +38,6 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
         width: 1920,
         height: 1080,
         overflow: "hidden",
-        background: "rgba(16,32,117,0.88)",
       }}
     >
       <img
@@ -46,13 +45,13 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
         alt="Banner"
         style={{
           position: "absolute",
-          left: 340,
-          top: 131,
-          width: 1240,
-          height: 236,
+          left: 510,
+          top: 116,
+          width: 900,
+          height: 300,
           borderRadius: 30,
           boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
-          objectFit: "cover",
+          objectFit: "fill",
         }}
       />
 

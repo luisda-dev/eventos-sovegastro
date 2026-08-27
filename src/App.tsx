@@ -32,16 +32,6 @@ const SCREEN_BACKGROUND: Record<NavTarget, string> = {
   conferencistas: "/assets/bg-salon.jpg",
 };
 
-// Capa de degradado azul sobre la foto de fondo: oscurece la parte superior
-// y las esquinas para que el texto blanco y el banner resalten (Inicio usa
-// una foto real de auditorio, sin el tono azul del resto de las pantallas).
-const SCREEN_OVERLAY: Record<NavTarget, string> = {
-  home: "linear-gradient(180deg, rgba(6,12,40,0.85) 0%, rgba(11,19,64,0.55) 25%, rgba(11,19,64,0.4) 60%, rgba(11,19,64,0.6) 100%)",
-  sala: "none",
-  exposicion: "none",
-  conferencistas: "none",
-};
-
 export default function App() {
   const [screen, setScreen] = useState<NavTarget>("home");
   const { scale, offsetX, offsetY } = useStageScale();
@@ -66,15 +56,6 @@ export default function App() {
           background: `url(${SCREEN_BACKGROUND[screen]}) center/cover no-repeat`,
         }}
       />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: SCREEN_OVERLAY[screen],
-          pointerEvents: "none",
-        }}
-      />
-
       <div
         style={{
           position: "absolute",

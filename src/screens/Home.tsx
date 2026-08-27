@@ -46,43 +46,6 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         overflow: "hidden",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          left: 1103,
-          top: -316,
-          width: 1000,
-          height: 1000,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(16,32,117,0.9), rgba(16,32,117,0) 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          right: -350,
-          top: 180,
-          width: 1100,
-          height: 1100,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(16,32,117,0.85), rgba(16,32,117,0) 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          left: 1030,
-          top: 416,
-          width: 1300,
-          height: 1100,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(16,32,117,0.8), rgba(16,32,117,0) 70%)",
-          pointerEvents: "none",
-        }}
-      />
-
       <span
         style={{
           position: "absolute",
@@ -105,13 +68,13 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         alt="Banner 47° Congreso Nacional de Gastroenterología"
         style={{
           position: "absolute",
-          left: 340,
+          left: 410,
           top: 101,
-          width: 1240,
-          height: 260,
+          width: 1100,
+          height: 367,
           borderRadius: 30,
           boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
-          objectFit: "contain",
+          objectFit: "fill",
         }}
       />
 

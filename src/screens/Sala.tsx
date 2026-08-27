@@ -13,7 +13,6 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
         width: 1920,
         height: 1080,
         overflow: "hidden",
-        background: "rgba(16,32,117,0.52)",
       }}
     >
       <NavBar active="sala" onNavigate={onNavigate} />
