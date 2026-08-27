@@ -68,6 +68,7 @@ export const BIO =
 export const EVENT_DATE = new Date("2026-10-29T00:00:00").getTime();
 
 export const BANNERS = [
+  "/assets/banners/1.jpg",
   "/assets/banners/2.jpg",
   "/assets/banners/3.jpg",
   "/assets/banners/4.jpg",
@@ -75,9 +76,11 @@ export const BANNERS = [
   "/assets/banners/6.jpg",
   "/assets/banners/7.jpg",
   "/assets/banners/8.jpg",
+  "/assets/banners/9.jpg",
   "/assets/banners/10.jpg",
   "/assets/banners/11.jpg",
   "/assets/banners/12.jpg",
+  "/assets/banners/13.jpg",
   "/assets/banners/14.jpg",
   "/assets/banners/15.jpg",
   "/assets/banners/16.jpg",

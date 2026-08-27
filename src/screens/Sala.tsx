@@ -47,8 +47,8 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           alt="Banner Patrocinante"
           style={{
             width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            aspectRatio: "9 / 16",
+            objectFit: "contain",
             animation: "fadeIn 0.5s ease-in-out",
           }}
         />

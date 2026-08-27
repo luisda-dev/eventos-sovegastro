@@ -8,3 +8,4 @@ dist-ssr
 .env*
 assets-entrantes/
 assets entrantes/
+/assets/
