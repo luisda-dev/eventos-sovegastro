@@ -54,14 +54,14 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
 
       <div
         onClick={() => onNavigate("home")}
+        className="home-menu-item home-menu-item--active"
         style={{
           position: "absolute",
           left: 1487,
-          top: 458,
+          top: 558,
           width: 366,
           height: 97,
           borderRadius: "100px 12px 100px 100px",
-          background: "rgb(217,217,217)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -75,7 +75,7 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         style={{
           position: "absolute",
           left: 1487,
-          top: 575,
+          top: 675,
           width: 366,
           display: "flex",
           flexDirection: "column",
@@ -92,14 +92,12 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
               width: 366,
               minHeight: 70,
               borderRadius: "100px 12px 100px 100px",
-              background: "rgb(217,217,217)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               textAlign: "center",
               padding: "10px 24px",
               cursor: "pointer",
-              transition: "background 0.2s ease, transform 0.2s ease",
             }}
           >
             <span style={{ fontWeight: 600, fontSize: 24, color: "#000", lineHeight: 1.2 }}>
@@ -162,8 +160,19 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
       />
 
       <style>{`
+        .home-menu-item {
+          background: rgb(217,217,217);
+          transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+        }
         .home-menu-item:hover {
           background: rgb(8,234,227);
+          transform: scale(1.04);
+        }
+        .home-menu-item--active {
+          background: rgb(8,234,227);
+          box-shadow: 0 0 0 3px rgba(255,255,255,0.55);
+        }
+        .home-menu-item--active:hover {
           transform: scale(1.04);
         }
       `}</style>

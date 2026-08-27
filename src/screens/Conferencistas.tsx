@@ -97,13 +97,15 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
             onClick={() => setModalIndex(i)}
             style={{
               width: 290,
-              height: 350,
+              height: 410,
               borderRadius: 12,
               background: "rgb(20,31,85)",
               overflow: "hidden",
               position: "relative",
               cursor: "pointer",
               padding: 15,
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <img
@@ -115,10 +117,11 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
                 borderRadius: "12px 12px 7px 12px",
                 objectFit: "cover",
                 display: "block",
+                flexShrink: 0,
               }}
             />
-            <div style={{ marginTop: 14 }}>
-              <div style={{ fontWeight: 700, fontSize: 24, color: "#fff" }}>{sp.name}</div>
+            <div style={{ marginTop: 14, minHeight: 64 }}>
+              <div style={{ fontWeight: 700, fontSize: 24, color: "#fff", lineHeight: 1.25 }}>{sp.name}</div>
               <div
                 style={{
                   fontWeight: 700,
@@ -131,7 +134,7 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
                 {sp.role}
               </div>
             </div>
-            <div style={{ display: "flex", gap: 24, marginTop: 16 }}>
+            <div style={{ display: "flex", gap: 24, marginTop: "auto" }}>
               <DayTabs activeDay={activeDays[i]} onSelect={(d, e) => setDay(i, d, e)} />
             </div>
           </div>

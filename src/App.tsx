@@ -76,13 +76,14 @@ function DesktopStage({ screen, onNavigate }: { screen: NavTarget; onNavigate: (
           />
 
           {/* Overlay lateral derecho: fondo azul degradado detrás del menú
-              lateral, anclado al borde real de la pantalla. */}
+              lateral, anclado al borde real de la pantalla. Cubre el 40%
+              derecho de la pantalla. */}
           <div
             style={{
               position: "absolute",
               right: 0,
               top: 0,
-              width: Math.max(380, offsetX + 540 * scale),
+              width: "40%",
               height: "100%",
               background:
                 "linear-gradient(90deg, rgba(9,16,58,0) 0%, rgba(9,16,58,0.45) 35%, rgba(9,16,58,0.7) 100%)",
