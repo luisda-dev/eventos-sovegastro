@@ -57,6 +57,20 @@ export default function App() {
         }}
       />
 
+      {screen !== "home" && (
+        /* Overlay azul plano al 75%, anclado al viewport real (no al
+           stage de 1920x1080) para cubrir el 100% de la pantalla en
+           cualquier resolución o aspect ratio. */
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(9,16,58,0.75)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
+
       {screen === "home" && (
         <>
           {/* Overlay inferior: degradado azul a transparente para que el

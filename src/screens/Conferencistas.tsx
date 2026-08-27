@@ -73,17 +73,6 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
         overflow: "hidden",
       }}
     >
-      {/* Overlay azul (mismo tono que Inicio) al 60% para dar contraste
-          y unidad visual con el resto de las pantallas. */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(9,16,58,0.6)",
-          pointerEvents: "none",
-        }}
-      />
-
       <img
         src="/assets/banner-congreso.png"
         alt="Banner"
