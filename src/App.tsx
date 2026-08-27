@@ -56,6 +56,43 @@ export default function App() {
           background: `url(${SCREEN_BACKGROUND[screen]}) center/cover no-repeat`,
         }}
       />
+
+      {screen === "home" && (
+        <>
+          {/* Overlay inferior: degradado azul a transparente para que el
+              contador resalte sobre la foto de fondo. Se ancla al viewport
+              real (no al stage de 1920x1080) para llegar siempre hasta el
+              borde inferior de la pantalla, sin importar la resolución. */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              bottom: 0,
+              width: "100%",
+              height: Math.max(240, 340 * scale),
+              background:
+                "linear-gradient(180deg, rgba(9,16,58,0) 0%, rgba(9,16,58,0.55) 45%, rgba(9,16,58,0.85) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+
+          {/* Overlay lateral derecho: fondo azul degradado detrás del menú
+              lateral, anclado al borde real de la pantalla. */}
+          <div
+            style={{
+              position: "absolute",
+              right: 0,
+              top: 0,
+              width: Math.max(380, offsetX + 540 * scale),
+              height: "100%",
+              background:
+                "linear-gradient(90deg, rgba(9,16,58,0) 0%, rgba(9,16,58,0.45) 35%, rgba(9,16,58,0.7) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+        </>
+      )}
+
       <div
         style={{
           position: "absolute",
