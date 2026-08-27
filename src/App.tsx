@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import type { NavTarget } from "./data";
+import { useIsMobile } from "./useIsMobile";
 import Home from "./screens/Home";
 import Sala from "./screens/Sala";
 import Exposicion from "./screens/Exposicion";
 import Conferencistas from "./screens/Conferencistas";
+import HomeMobile from "./screens/mobile/HomeMobile";
+import SalaMobile from "./screens/mobile/SalaMobile";
+import ExposicionMobile from "./screens/mobile/ExposicionMobile";
+import ConferencistasMobile from "./screens/mobile/ConferencistasMobile";
 
 function useStageScale() {
   const [stage, setStage] = useState({ scale: 1, offsetX: 0, offsetY: 0 });
@@ -32,31 +37,11 @@ const SCREEN_BACKGROUND: Record<NavTarget, string> = {
   conferencistas: "/assets/bg-salon.jpg",
 };
 
-export default function App() {
-  const [screen, setScreen] = useState<NavTarget>("home");
+function DesktopStage({ screen, onNavigate }: { screen: NavTarget; onNavigate: (t: NavTarget) => void }) {
   const { scale, offsetX, offsetY } = useStageScale();
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "100vw",
-        height: "100vh",
-        overflow: "hidden",
-        background: "#0b1330",
-        fontFamily: "Inter, sans-serif",
-      }}
-    >
-      {/* Fondo a pantalla completa: cubre todo el viewport real, sin las
-          bandas del letterbox que deja el stage de 1920x1080 escalado. */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: `url(${SCREEN_BACKGROUND[screen]}) center/cover no-repeat`,
-        }}
-      />
-
+    <>
       {screen !== "home" && (
         /* Overlay azul plano al 75%, anclado al viewport real (no al
            stage de 1920x1080) para cubrir el 100% de la pantalla en
@@ -118,11 +103,73 @@ export default function App() {
           transformOrigin: "top left",
         }}
       >
-        {screen === "home" && <Home onNavigate={setScreen} />}
-        {screen === "sala" && <Sala onNavigate={setScreen} />}
-        {screen === "exposicion" && <Exposicion onNavigate={setScreen} />}
-        {screen === "conferencistas" && <Conferencistas onNavigate={setScreen} />}
+        {screen === "home" && <Home onNavigate={onNavigate} />}
+        {screen === "sala" && <Sala onNavigate={onNavigate} />}
+        {screen === "exposicion" && <Exposicion onNavigate={onNavigate} />}
+        {screen === "conferencistas" && <Conferencistas onNavigate={onNavigate} />}
       </div>
+    </>
+  );
+}
+
+function MobileStage({ screen, onNavigate }: { screen: NavTarget; onNavigate: (t: NavTarget) => void }) {
+  return (
+    <div style={{ position: "relative", minHeight: "100vh" }}>
+      {/* Overlay azul plano: mismo tono que el desktop, sirve de base
+          legible sobre la foto de fondo para todas las pantallas móviles
+          (Inicio incluida — en vertical no hay espacio para el degradado
+          decorativo lateral del layout de escritorio). */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(9,16,58,0.75)",
+          pointerEvents: "none",
+        }}
+      />
+      <div style={{ position: "relative", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        {screen === "home" && <HomeMobile onNavigate={onNavigate} />}
+        {screen === "sala" && <SalaMobile onNavigate={onNavigate} />}
+        {screen === "exposicion" && <ExposicionMobile onNavigate={onNavigate} />}
+        {screen === "conferencistas" && <ConferencistasMobile onNavigate={onNavigate} />}
+      </div>
+    </div>
+  );
+}
+
+export default function App() {
+  const [screen, setScreen] = useState<NavTarget>("home");
+  const isMobile = useIsMobile();
+
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: "100vw",
+        minHeight: "100vh",
+        height: isMobile ? "auto" : "100vh",
+        overflow: isMobile ? "visible" : "hidden",
+        background: "#0b1330",
+        fontFamily: "Inter, sans-serif",
+      }}
+    >
+      {/* Fondo a pantalla completa: cubre todo el viewport real, sin las
+          bandas del letterbox que deja el stage de 1920x1080 escalado.
+          En móvil se fija (no hace scroll) para que el contenido, que sí
+          scrollea, siempre se vea sobre el mismo fondo. */}
+      <div
+        style={{
+          position: isMobile ? "fixed" : "absolute",
+          inset: 0,
+          background: `url(${SCREEN_BACKGROUND[screen]}) center/cover no-repeat`,
+        }}
+      />
+
+      {isMobile ? (
+        <MobileStage screen={screen} onNavigate={setScreen} />
+      ) : (
+        <DesktopStage screen={screen} onNavigate={setScreen} />
+      )}
     </div>
   );
 }
