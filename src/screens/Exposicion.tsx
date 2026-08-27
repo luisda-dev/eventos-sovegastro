@@ -25,7 +25,7 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
   const rotateTier = (tier: string, dir: 1 | -1) => {
     setTierOffsets((prev) => {
       const len = TIERS_BASE.find((t) => t.key === tier)?.logos.length || 1;
-      const step = 3;
+      const step = 1;
       const next = (((prev[tier] + dir * step) % len) + len) % len;
       return { ...prev, [tier]: next };
     });
@@ -60,7 +60,7 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
 
       {TIERS_BASE.map((tier) => {
         const layout = TIER_LAYOUT[tier.key];
-        const VISIBLE = 3;
+        const VISIBLE = 5;
         const logos = rotate(tier.logos, tierOffsets[tier.key]).slice(0, VISIBLE);
         return (
           <div key={tier.key}>
@@ -130,14 +130,14 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
                 top: layout.cardsTop,
                 width: 1070,
                 display: "flex",
-                gap: 18,
+                gap: 16,
               }}
             >
               {logos.map((logo) => (
                 <div
                   key={logo.id}
                   style={{
-                    width: 200,
+                    width: 190,
                     height: 130,
                     borderRadius: 20,
                     background: "radial-gradient(176px 136px at 24% 16%, rgb(208,208,208), rgb(255,255,255))",
