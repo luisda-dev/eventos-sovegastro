@@ -66,6 +66,18 @@ export default function SalaMobile({ onNavigate }: { onNavigate: (target: NavTar
           <span style={{ fontWeight: 600, fontSize: 22, color: "#fff" }}>STREAMING</span>
         </div>
 
+        <div style={{ display: "flex", justifyContent: "center", padding: "4px 0" }}>
+          <img
+            src="/assets/logo-congreso.png"
+            alt="Logo 47° Congreso Nacional de Gastroenterología"
+            style={{
+              maxHeight: 70,
+              maxWidth: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+
         <div
           style={{
             width: "100%",

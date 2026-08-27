@@ -23,7 +23,7 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           left: 90,
           top: 140,
           width: 300,
-          height: 800,
+          height: 840,
           borderRadius: 20,
           background: "rgb(217,217,217)",
           display: "flex",
@@ -53,7 +53,7 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           left: 410,
           top: 140,
           width: 1100,
-          height: 800,
+          height: 710,
           borderRadius: 20,
           background: "#1a1a1a",
           display: "flex",
@@ -100,10 +100,33 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
       <div
         style={{
           position: "absolute",
+          left: 410,
+          top: 868,
+          width: 1100,
+          height: 112,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src="/assets/logo-congreso.png"
+          alt="Logo 47° Congreso Nacional de Gastroenterología"
+          style={{
+            maxHeight: "100%",
+            maxWidth: "100%",
+            objectFit: "contain",
+          }}
+        />
+      </div>
+
+      <div
+        style={{
+          position: "absolute",
           left: 1530,
           top: 140,
           width: 300,
-          height: 800,
+          height: 840,
           borderRadius: 20,
           background: "rgb(217,217,217)",
           display: "flex",
