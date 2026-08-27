@@ -34,7 +34,9 @@ export default function SalaMobile({ onNavigate }: { onNavigate: (target: NavTar
             width: "100%",
             aspectRatio: "16 / 9",
             borderRadius: 16,
-            background: "#1a1a1a",
+            backgroundImage: "url('/assets/portada video de fondo.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -100,28 +102,15 @@ export default function SalaMobile({ onNavigate }: { onNavigate: (target: NavTar
           }}
         />
 
-        <div
+        <img
+          src="/assets/slido.png"
+          alt="Slido"
           style={{
             width: "100%",
-            padding: "24px 0",
             borderRadius: 16,
-            background: "rgb(217,217,217)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            objectFit: "contain",
           }}
-        >
-          <span
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 500,
-              fontSize: 26,
-              color: "rgb(2,120,38)",
-            }}
-          >
-            SLIDO
-          </span>
-        </div>
+        />
       </div>
     </div>
   );

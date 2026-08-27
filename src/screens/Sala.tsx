@@ -68,7 +68,9 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           width: 1100,
           height: 710,
           borderRadius: 20,
-          background: "#1a1a1a",
+          backgroundImage: "url('/assets/portada video de fondo.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -133,24 +135,18 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
         />
       </div>
 
-      <div
+      <img
+        src="/assets/slido.png"
+        alt="Slido"
         style={{
           position: "absolute",
           left: 1530,
           top: 140,
           width: 300,
           height: 840,
-          borderRadius: 20,
-          background: "rgb(217,217,217)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          objectFit: "contain",
         }}
-      >
-        <span style={{ fontFamily: "Poppins, sans-serif", fontWeight: 500, fontSize: 56, color: "rgb(2,120,38)" }}>
-          SLIDO
-        </span>
-      </div>
+      />
     </div>
   );
 }
