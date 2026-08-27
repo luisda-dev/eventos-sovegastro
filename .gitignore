@@ -6,3 +6,4 @@ dist-ssr
 .DS_Store
 .vercel
 .env*
+assets-entrantes/
