@@ -108,11 +108,10 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
           left: 340,
           top: 101,
           width: 1240,
-          height: 413,
+          height: 260,
           borderRadius: 30,
           boxShadow: "inset 0 0 0 1px rgb(8,234,227)",
           objectFit: "contain",
-          background: "rgba(6,12,40,0.35)",
         }}
       />
 

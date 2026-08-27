@@ -36,7 +36,7 @@ const SCREEN_BACKGROUND: Record<NavTarget, string> = {
 // y las esquinas para que el texto blanco y el banner resalten (Inicio usa
 // una foto real de auditorio, sin el tono azul del resto de las pantallas).
 const SCREEN_OVERLAY: Record<NavTarget, string> = {
-  home: "linear-gradient(180deg, rgba(6,12,40,0.88) 0%, rgba(11,19,64,0.72) 22%, rgba(11,19,64,0.35) 45%, rgba(11,19,64,0.55) 100%), radial-gradient(120% 90% at 50% 0%, rgba(9,16,58,0.15) 0%, rgba(6,10,35,0.75) 100%)",
+  home: "linear-gradient(180deg, rgba(6,12,40,0.85) 0%, rgba(11,19,64,0.55) 25%, rgba(11,19,64,0.4) 60%, rgba(11,19,64,0.6) 100%)",
   sala: "none",
   exposicion: "none",
   conferencistas: "none",
