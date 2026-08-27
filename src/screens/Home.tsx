@@ -44,7 +44,6 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         width: 1920,
         height: 1080,
         overflow: "hidden",
-        background: "url(/assets/bg-home.svg) center/cover no-repeat",
       }}
     >
       <div
@@ -102,7 +101,7 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
       </span>
 
       <img
-        src="/assets/banner-congreso.svg"
+        src="/assets/banner-congreso.png"
         alt="Banner 47° Congreso Nacional de Gastroenterología"
         style={{
           position: "absolute",
@@ -212,7 +211,7 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
       </div>
 
       <img
-        src="/assets/doctor.svg"
+        src="/assets/doctor.png"
         alt="Doctor"
         style={{
           position: "absolute",

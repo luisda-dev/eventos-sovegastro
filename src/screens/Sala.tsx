@@ -13,8 +13,7 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
         width: 1920,
         height: 1080,
         overflow: "hidden",
-        background:
-          "linear-gradient(rgba(16,32,117,0.52), rgba(16,32,117,0.52)), url(/assets/bg-salon.svg) center/cover no-repeat",
+        background: "rgba(16,32,117,0.52)",
       }}
     >
       <NavBar active="sala" onNavigate={onNavigate} />

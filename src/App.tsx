@@ -25,6 +25,13 @@ function useStageScale() {
   return stage;
 }
 
+const SCREEN_BACKGROUND: Record<NavTarget, string> = {
+  home: "/assets/bg-home.jpg",
+  sala: "/assets/bg-salon.jpg",
+  exposicion: "/assets/bg-salon.jpg",
+  conferencistas: "/assets/bg-salon.jpg",
+};
+
 export default function App() {
   const [screen, setScreen] = useState<NavTarget>("home");
   const { scale, offsetX, offsetY } = useStageScale();
@@ -40,6 +47,16 @@ export default function App() {
         fontFamily: "Inter, sans-serif",
       }}
     >
+      {/* Fondo a pantalla completa: cubre todo el viewport real, sin las
+          bandas del letterbox que deja el stage de 1920x1080 escalado. */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: `url(${SCREEN_BACKGROUND[screen]}) center/cover no-repeat`,
+        }}
+      />
+
       <div
         style={{
           position: "absolute",
@@ -49,7 +66,6 @@ export default function App() {
           height: 1080,
           transform: `scale(${scale})`,
           transformOrigin: "top left",
-          boxShadow: "0 0 80px rgba(0,0,0,0.55)",
         }}
       >
         {screen === "home" && <Home onNavigate={setScreen} />}

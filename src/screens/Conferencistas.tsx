@@ -57,8 +57,8 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
 
   const speakers = SPEAKERS_BASE.map((sp) => ({
     img: sp.img,
-    name: "CONFERENCISTA 1",
-    role: "GASTROENTEOROLOGO",
+    name: sp.name,
+    role: sp.role,
   }));
 
   const selected = modalIndex != null ? speakers[modalIndex] : null;
@@ -71,12 +71,11 @@ export default function Conferencistas({ onNavigate }: { onNavigate: (target: Na
         width: 1920,
         height: 1080,
         overflow: "hidden",
-        background:
-          "linear-gradient(rgba(16,32,117,0.88), rgba(16,32,117,0.88)), url(/assets/bg-salon.svg) center/cover no-repeat",
+        background: "rgba(16,32,117,0.88)",
       }}
     >
       <img
-        src="/assets/banner-congreso.svg"
+        src="/assets/banner-congreso.png"
         alt="Banner"
         style={{
           position: "absolute",

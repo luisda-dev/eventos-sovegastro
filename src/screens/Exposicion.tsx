@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { NavTarget } from "../data";
-import { LOGOS, TIERS_BASE } from "../data";
+import { TIERS_BASE } from "../data";
 import NavBar from "../components/NavBar";
 
 const TIER_LAYOUT: Record<string, { labelTop: number; dividerTop: number; cardsTop: number; arrowTop: number }> = {
@@ -24,7 +24,7 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
 
   const rotateTier = (tier: string, dir: 1 | -1) => {
     setTierOffsets((prev) => {
-      const len = LOGOS.length;
+      const len = TIERS_BASE.find((t) => t.key === tier)?.logos.length || 1;
       const next = (((prev[tier] + dir) % len) + len) % len;
       return { ...prev, [tier]: next };
     });
@@ -38,12 +38,11 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
         width: 1920,
         height: 1080,
         overflow: "hidden",
-        background:
-          "linear-gradient(rgba(16,32,117,0.88), rgba(16,32,117,0.88)), url(/assets/bg-salon.svg) center/cover no-repeat",
+        background: "rgba(16,32,117,0.88)",
       }}
     >
       <img
-        src="/assets/banner-congreso.svg"
+        src="/assets/banner-congreso.png"
         alt="Banner"
         style={{
           position: "absolute",
@@ -61,7 +60,7 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
 
       {TIERS_BASE.map((tier) => {
         const layout = TIER_LAYOUT[tier.key];
-        const logos = rotate(LOGOS, tierOffsets[tier.key]);
+        const logos = rotate(tier.logos, tierOffsets[tier.key]);
         return (
           <div key={tier.key}>
             <div
