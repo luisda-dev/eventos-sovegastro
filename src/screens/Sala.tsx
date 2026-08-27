@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { NavTarget } from "../data";
+import { BANNERS } from "../data";
 import NavBar from "../components/NavBar";
 
 export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) => void }) {
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [bannerIndex, setBannerIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBannerIndex((prev) => (prev + 1) % BANNERS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div
@@ -32,19 +41,23 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           overflow: "hidden",
         }}
       >
-        <span
+        <img
+          key={bannerIndex}
+          src={BANNERS[bannerIndex]}
+          alt="Banner Patrocinante"
           style={{
-            fontFamily: "Poppins, sans-serif",
-            fontWeight: 500,
-            fontSize: 56,
-            color: "#000",
-            transform: "rotate(-90deg)",
-            whiteSpace: "nowrap",
-            letterSpacing: 1,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            animation: "fadeIn 0.5s ease-in-out",
           }}
-        >
-          PATROCINANTES
-        </span>
+        />
+        <style>{`
+          @keyframes fadeIn {
+            from { opacity: 0.6; }
+            to { opacity: 1; }
+          }
+        `}</style>
       </div>
 
       <div

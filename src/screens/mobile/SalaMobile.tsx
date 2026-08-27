@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { NavTarget } from "../../data";
+import { BANNERS } from "../../data";
 import NavBarMobile from "../../components/NavBarMobile";
 
 export default function SalaMobile({ onNavigate }: { onNavigate: (target: NavTarget) => void }) {
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [bannerIndex, setBannerIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBannerIndex((prev) => (prev + 1) % BANNERS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
@@ -78,29 +87,18 @@ export default function SalaMobile({ onNavigate }: { onNavigate: (target: NavTar
           />
         </div>
 
-        <div
+        <img
+          key={bannerIndex}
+          src={BANNERS[bannerIndex]}
+          alt="Banner Patrocinante"
           style={{
             width: "100%",
-            padding: "24px 0",
+            aspectRatio: "9 / 16",
             borderRadius: 16,
-            background: "rgb(217,217,217)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            objectFit: "cover",
+            animation: "fadeIn 0.5s ease-in-out",
           }}
-        >
-          <span
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontWeight: 500,
-              fontSize: 26,
-              color: "#000",
-              letterSpacing: 1,
-            }}
-          >
-            PATROCINANTES
-          </span>
-        </div>
+        />
 
         <div
           style={{

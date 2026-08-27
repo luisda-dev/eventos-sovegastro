@@ -66,3 +66,19 @@ export const BIO =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare mollis molestie. Mauris faucibus ante sollicitudin quam lobortis, ut cursus magna accumsan. Vestibulum pellentesque, diam ac scelerisque feugiat, urna neque aliquet massa, eu dictum quam metus nec diam. Morbi fringilla massa a augue suscipit, nec tempor enim pellentesque. Sed blandit mauris ullamcorper, luctus mauris quis, blandit libero. Integer sodales arcu quis augue aliquet, in eleifend ipsum luctus. Nunc non leo consectetur, bibendum nisi ut, dictum magna. Aliquam arcu turpis, iaculis sit amet faucibus vel, maximus vel libero. Fusce quis blandit ipsum. Aenean feugiat auctor porta. Sed euismod nisl eget lacus ultricies fermentum. Nunc fermentum dui non rhoncus suscipit. Nunc arcu neque, luctus vitae nisi vitae, pharetra ullamcorper elit. Sed eu nisi a turpis viverra aliquet sit amet et enim. Phasellus finibus purus sed tortor vestibulum ornare. Fusce ut malesuada purus.";
 
 export const EVENT_DATE = new Date("2026-10-29T00:00:00").getTime();
+
+export const BANNERS = [
+  "/assets/banners/2.jpg",
+  "/assets/banners/3.jpg",
+  "/assets/banners/4.jpg",
+  "/assets/banners/5.jpg",
+  "/assets/banners/6.jpg",
+  "/assets/banners/7.jpg",
+  "/assets/banners/8.jpg",
+  "/assets/banners/10.jpg",
+  "/assets/banners/11.jpg",
+  "/assets/banners/12.jpg",
+  "/assets/banners/14.jpg",
+  "/assets/banners/15.jpg",
+  "/assets/banners/16.jpg",
+];
