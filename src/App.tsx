@@ -58,6 +58,23 @@ function DesktopStage({ screen, onNavigate }: { screen: NavTarget; onNavigate: (
 
       {screen === "home" && (
         <>
+          {/* Overlay superior: mismo degradado que el inferior pero
+              invertido (oscuro arriba, transparente hacia abajo), para que
+              el título resalte sobre la foto de fondo. Cubre más del 25%
+              de la altura de pantalla. */}
+          <div
+            style={{
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              height: "28%",
+              background:
+                "linear-gradient(0deg, rgba(9,16,58,0) 0%, rgba(9,16,58,0.55) 45%, rgba(9,16,58,0.85) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+
           {/* Overlay inferior: degradado azul a transparente para que el
               contador resalte sobre la foto de fondo. Se ancla al viewport
               real (no al stage de 1920x1080) para llegar siempre hasta el
