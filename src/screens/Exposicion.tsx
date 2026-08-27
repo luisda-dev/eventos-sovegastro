@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar";
 const TIER_LAYOUT: Record<string, { labelTop: number; dividerTop: number; cardsTop: number; arrowTop: number }> = {
   platino: { labelTop: 445, dividerTop: 469, cardsTop: 505, arrowTop: 558 },
   oro: { labelTop: 656, dividerTop: 681, cardsTop: 712, arrowTop: 765 },
-  bronce: { labelTop: 867, dividerTop: 892, cardsTop: 923, arrowTop: 976 },
+  plata: { labelTop: 867, dividerTop: 892, cardsTop: 923, arrowTop: 976 },
 };
 
 function rotate<T>(arr: T[], offset: number): T[] {
@@ -19,13 +19,14 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
   const [tierOffsets, setTierOffsets] = useState<Record<string, number>>({
     platino: 0,
     oro: 0,
-    bronce: 0,
+    plata: 0,
   });
 
   const rotateTier = (tier: string, dir: 1 | -1) => {
     setTierOffsets((prev) => {
       const len = TIERS_BASE.find((t) => t.key === tier)?.logos.length || 1;
-      const next = (((prev[tier] + dir) % len) + len) % len;
+      const step = 3;
+      const next = (((prev[tier] + dir * step) % len) + len) % len;
       return { ...prev, [tier]: next };
     });
   };
@@ -59,7 +60,8 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
 
       {TIERS_BASE.map((tier) => {
         const layout = TIER_LAYOUT[tier.key];
-        const logos = rotate(tier.logos, tierOffsets[tier.key]);
+        const VISIBLE = 3;
+        const logos = rotate(tier.logos, tierOffsets[tier.key]).slice(0, VISIBLE);
         return (
           <div key={tier.key}>
             <div
@@ -95,29 +97,31 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
               }}
             />
 
-            <div
-              onClick={() => rotateTier(tier.key, -1)}
-              style={{
-                position: "absolute",
-                left: 340,
-                top: layout.arrowTop,
-                width: 30,
-                height: 20,
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
+            {tier.logos.length > VISIBLE && (
               <div
+                onClick={() => rotateTier(tier.key, -1)}
                 style={{
-                  width: 0,
-                  height: 0,
-                  borderTop: "10px solid transparent",
-                  borderBottom: "10px solid transparent",
-                  borderRight: "16px solid rgb(8,234,227)",
+                  position: "absolute",
+                  left: 340,
+                  top: layout.arrowTop,
+                  width: 30,
+                  height: 20,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
                 }}
-              />
-            </div>
+              >
+                <div
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    borderRight: "16px solid rgb(8,234,227)",
+                  }}
+                />
+              </div>
+            )}
 
             <div
               style={{
@@ -153,29 +157,31 @@ export default function Exposicion({ onNavigate }: { onNavigate: (target: NavTar
               ))}
             </div>
 
-            <div
-              onClick={() => rotateTier(tier.key, 1)}
-              style={{
-                position: "absolute",
-                left: 1550,
-                top: layout.arrowTop,
-                width: 30,
-                height: 20,
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
+            {tier.logos.length > VISIBLE && (
               <div
+                onClick={() => rotateTier(tier.key, 1)}
                 style={{
-                  width: 0,
-                  height: 0,
-                  borderTop: "10px solid transparent",
-                  borderBottom: "10px solid transparent",
-                  borderLeft: "16px solid rgb(8,234,227)",
+                  position: "absolute",
+                  left: 1550,
+                  top: layout.arrowTop,
+                  width: 30,
+                  height: 20,
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
                 }}
-              />
-            </div>
+              >
+                <div
+                  style={{
+                    width: 0,
+                    height: 0,
+                    borderTop: "10px solid transparent",
+                    borderBottom: "10px solid transparent",
+                    borderLeft: "16px solid rgb(8,234,227)",
+                  }}
+                />
+              </div>
+            )}
           </div>
         );
       })}

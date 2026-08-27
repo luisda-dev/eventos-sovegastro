@@ -13,7 +13,7 @@ export interface SpeakerBase {
 }
 
 export interface Tier {
-  key: "platino" | "oro" | "bronce";
+  key: "platino" | "oro" | "plata";
   label: string;
   color: string;
   logos: Logo[];
@@ -25,9 +25,12 @@ export const TIERS_BASE: Tier[] = [
     label: "Platino",
     color: "rgb(8,234,227)",
     logos: [
-      { id: "astor-medical", img: "/assets/logos/astor-medical.png", alt: "Astor Medical" },
-      { id: "leti", img: "/assets/logos/leti.png", alt: "Grupo Leti" },
+      { id: "hospitalar", img: "/assets/logos/hospitalar.png", alt: "Hospitalar" },
+      { id: "hygea-medical", img: "/assets/logos/hygea-medical.png", alt: "Hygea Medical" },
       { id: "farma", img: "/assets/logos/farma.png", alt: "Farma" },
+      { id: "pharmetique-labs", img: "/assets/logos/pharmetique-labs.png", alt: "Pharmetique Labs" },
+      { id: "grupo-vargas", img: "/assets/logos/grupo-vargas.png", alt: "Grupo Vargas Farma Venezuela" },
+      { id: "leti", img: "/assets/logos/leti.png", alt: "Grupo Leti" },
     ],
   },
   {
@@ -35,17 +38,19 @@ export const TIERS_BASE: Tier[] = [
     label: "Oro",
     color: "rgb(234,189,8)",
     logos: [
-      { id: "hospitalar", img: "/assets/logos/hospitalar.png", alt: "Hospitalar" },
-      { id: "distrilab", img: "/assets/logos/distrilab.jpg", alt: "Distrilab" },
+      { id: "astor-medical", img: "/assets/logos/astor-medical.png", alt: "Astor Medical" },
+      { id: "mck-calox", img: "/assets/logos/mck-calox.png", alt: "McK Pharmaceutical / Calox International" },
+      { id: "biotech", img: "/assets/logos/biotech.png", alt: "Biotech" },
     ],
   },
   {
-    key: "bronce",
-    label: "Bronce",
-    color: "rgb(207,114,0)",
+    key: "plata",
+    label: "Plata",
+    color: "rgb(192,192,192)",
     logos: [
-      { id: "farmatodo", img: "/assets/logos/farmatodo.jpg", alt: "Farmatodo" },
-      { id: "redvital", img: "/assets/logos/redvital.png", alt: "Redvital" },
+      { id: "airela", img: "/assets/logos/airela.png", alt: "Airela Pharmacéutica" },
+      { id: "drotafarma", img: "/assets/logos/drotafarma.png", alt: "Drotafarma" },
+      { id: "ronava", img: "/assets/logos/ronava.png", alt: "Ronava" },
     ],
   },
 ];
