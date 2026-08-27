@@ -32,7 +32,7 @@ function useStageScale() {
 
 const SCREEN_BACKGROUND: Record<NavTarget, string> = {
   home: "/assets/bg-home.jpg",
-  sala: "/assets/bg-salon.jpg",
+  sala: "/assets/bg-sala-conferencias.jpeg",
   exposicion: "/assets/bg-salon.jpg",
   conferencistas: "/assets/bg-salon.jpg",
 };
