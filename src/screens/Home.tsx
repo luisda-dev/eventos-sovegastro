@@ -150,11 +150,12 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         alt="Doctor"
         style={{
           position: "absolute",
-          left: 0,
+          left: -200,
           bottom: 0,
-          width: 608,
+          width: 1100,
           height: 1080,
-          objectFit: "contain",
+          objectFit: "cover",
+          objectPosition: "top center",
           pointerEvents: "none",
         }}
       />
