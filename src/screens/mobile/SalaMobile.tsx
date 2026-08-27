@@ -96,7 +96,8 @@ export default function SalaMobile({ onNavigate }: { onNavigate: (target: NavTar
           style={{
             width: "100%",
             aspectRatio: "9 / 16",
-            borderRadius: 16,
+            borderRadius: 12,
+            boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
             objectFit: "cover",
             animation: "fadeIn 0.5s ease-in-out",
           }}

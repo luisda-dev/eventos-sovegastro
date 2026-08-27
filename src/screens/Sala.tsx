@@ -33,12 +33,9 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           top: 140,
           width: 300,
           height: 840,
-          borderRadius: 20,
-          background: "rgb(217,217,217)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          overflow: "hidden",
         }}
       >
         <img
@@ -47,8 +44,9 @@ export default function Sala({ onNavigate }: { onNavigate: (target: NavTarget) =
           alt="Banner Patrocinante"
           style={{
             width: "100%",
-            aspectRatio: "9 / 16",
             objectFit: "contain",
+            borderRadius: 12,
+            boxShadow: "0 0 20px rgba(255, 255, 255, 0.2)",
             animation: "fadeIn 0.5s ease-in-out",
           }}
         />
