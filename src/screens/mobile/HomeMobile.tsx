@@ -56,7 +56,7 @@ export default function HomeMobile({ onNavigate }: { onNavigate: (target: NavTar
           style={{
             display: "block",
             margin: "0 auto",
-            height: "30vh",
+            height: "40vh",
             aspectRatio: "9 / 8",
             objectFit: "cover",
             objectPosition: "top center",
