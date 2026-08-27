@@ -83,7 +83,7 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         style={{
           position: "absolute",
           left: 1487,
-          top: 418,
+          top: 458,
           width: 366,
           height: 97,
           borderRadius: "100px 12px 100px 100px",
@@ -101,7 +101,7 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         style={{
           position: "absolute",
           left: 1487,
-          top: 535,
+          top: 575,
           width: 366,
           display: "flex",
           flexDirection: "column",
@@ -139,7 +139,7 @@ export default function Home({ onNavigate }: { onNavigate: (target: NavTarget) =
         style={{
           position: "absolute",
           left: 1487,
-          top: 960,
+          top: 985,
           width: 366,
           display: "flex",
           flexDirection: "column",
